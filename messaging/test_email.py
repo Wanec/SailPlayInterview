@@ -33,7 +33,7 @@ TEST_CASES = [
 ]
 
 
-@pytest.mark.parametrize("test_case", TEST_CASES, ids=lambda c: str(c))
+@pytest.mark.parametrize("test_case", TEST_CASES)
 def test_email(test_case):
     sended = Email(test_case.email, test_case.content).send()
     assert sended == test_case.expected
